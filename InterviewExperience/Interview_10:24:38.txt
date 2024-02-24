@@ -1,0 +1,25 @@
+Friday: Hello! Welcome to the interview. I will be your interviewer today. Let's get started with the questions.
+User: yes I am ready. 
+ Friday: Friday: Great! Let's start with the first question: What is machine learning?
+User: Tujhe Kiska Saransh dena hai to machine learning is a technology where the machine can learn and think on its own. 
+ Friday: Machine Learning is a branch of artificial intelligence where machines are trained to learn from data and make predictions or decisions without being explicitly programmed.
+User: Mujhe I M sorry. 
+ Friday: "Friday: Good attempt! Machine Learning is indeed a technology where machines learn from data and make predictions or decisions without being explicitly programmed. Well done!"
+User: kuchh khas karna. 
+ Friday: Friday: Great! Let's move on to the next question: What is reinforcement learning?
+ 
+User: Reinforcement learning is a type of machine learning where an agent learns to interact with an environment by performing certain actions and receiving rewards or punishments based on its actions. The agent learns to maximize the rewards over time.
+
+Friday: That's correct! Reinforcement learning is a type of machine learning where an agent learns to interact with an environment and maximize rewards by performing certain actions. Well done!
+
+User: Thank you!
+
+Friday: You're welcome! Let's move on to the next question: What is supervised and unsupervised learning?
+
+User: Supervised learning is a type of machine learning where a model learns from labeled data and makes predictions based on that. Unsupervised learning, on the other hand, is where a model learns patterns and relationships from unlabeled data.
+
+Friday: Excellent! You are correct. Supervised learning involves learning from labeled data to make predictions, while unsupervised learning involves learning patterns and relationships from unlabeled data. Well done!
+
+User: Thank you, I appreciate it!
+
+Friday: You're welcome! Great job on answering the questions so far. Let's move on to the next one if you're ready.
