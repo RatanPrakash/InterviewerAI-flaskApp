@@ -1,3 +1,5 @@
+## these are voices available for pyttsx lib
+
 Voice:
 ID: com.apple.speech.synthesis.voice.Albert
 Name: Albert
