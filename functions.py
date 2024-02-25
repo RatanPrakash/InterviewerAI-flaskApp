@@ -7,19 +7,19 @@ from gtts import gTTS
 # def say(text):
 #     os.system(f"""say "{text}" """)
 
-# def say(text):
-#     # Initialize the text-to-speech engine
-#     engine = pyttsx3.init(driverName='nsss')  # Use 'sapi5' on Windows
-#     # engine.setProperty('voice', 'com.apple.voice.compact.it-IT.Alice') 
-#     engine.setProperty('rate', 200)  # Adjust the speech rate (words per minute)
-#     engine.say(text)
-#     engine.runAndWait()
-
 def say(text):
-    tts = gTTS(text=text, lang='en', slow=False, tld='co.uk')
-    tts.save("FridayReplies/output.mp3")
-    os.system("mpg123 FridayReplies/output.mp3")
-    # os.remove("output.mp3")
+    # Initialize the text-to-speech engine
+    engine = pyttsx3.init(driverName='nsss')  # Use 'sapi5' on Windows
+    # engine.setProperty('voice', 'com.apple.voice.compact.it-IT.Alice') 
+    engine.setProperty('rate', 200)  # Adjust the speech rate (words per minute)
+    engine.say(text)
+    engine.runAndWait()
+
+# def say(text):
+#     tts = gTTS(text=text, lang='en', slow=False)
+#     tts.save("FridayReplies/output.mp3")
+#     os.system("mpg123 FridayReplies/output.mp3")
+#     # os.remove("output.mp3")
 
 def speechToText():
     r = sr.Recognizer()

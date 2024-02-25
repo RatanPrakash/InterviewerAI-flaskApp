@@ -4,9 +4,8 @@ from dotenv import load_dotenv
 from functions import say, speechToText, write_text_to_file
 import datetime
 
-# load_dotenv()
-# openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = "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"
+load_dotenv()
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 def get_completion_from_messages(messages):
     response = openai.chat.completions.create(
@@ -19,13 +18,14 @@ def get_completion_from_messages(messages):
 context = [{"role": "system",
             "content": """Your name is 'Friday' and you are a helpful Interviewer chat bot who answers in short and crisp sentences. 
             Ask beginner level questions on data science and provide a judgement of the candidate's answers to them correctly. 
-            Make sure you ask different questions one by one and get their answers from the candidate. \
+            Make sure you ask different questions one by one and get their answers from the candidate. 
             Firstly Greet the user, Introduce yourself and ask them to introduce themselves. \
             Don't jump to technical questions directly. Start with a few HR questions. \
             Ask them to answer the questions in a natural way. \
             After each of their answer, reply in a interview style, correct them if needed and appreciate them if they are right. \
-            DO NOT answer unrelated questions. Stick to the interview process and your role. \
-            Be sure you know their name and use only their first name in the conversation."""}]
+            #Important# \
+                DO NOT answer unrelated questions. Stick to the interview process and your role. \
+                Be sure you know their name and use their first name in the conversation, occasionally."""}]
 
 def InterviewerAI(userResponse):
     print("Interviewer A.I., is now being called.")
@@ -52,12 +52,11 @@ questions = [
 def interview():
     print("Welcome to the Interview Bot!")
     print("I'll ask you a few questions. Please respond naturally. \n")
-    chat = ["", "",]
+    chat = ["", "", "", ""]
     ai_answer = InterviewerAI("")
     print(ai_answer)
     say(ai_answer)
     chat.append(f"Friday: {ai_answer}")
-    chat.append(" ")
     while True:
         printChat = "\n".join(chat)
         print(f"CHATS TILL NOW: \n {printChat} \n")
@@ -72,11 +71,9 @@ def interview():
         if userResponse:
             ai_answer = InterviewerAI(userResponse)
             print(ai_answer)
-            print()
             say(ai_answer)
             chat.append(f"User: {userResponse}")
             chat.append(f"Friday: {ai_answer}")
-            chat.append(" ")
 
     # Format the current date and time as desired for the file name
     current_datetime = datetime.datetime.now()
