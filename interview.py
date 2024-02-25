@@ -24,8 +24,8 @@ context = [{"role": "system",
             Ask them to answer the questions in a natural way. \
             After each of their answer, reply in a interview style, correct them if needed and appreciate them if they are right. \
             #Important# \
-                DO NOT answer unrelated questions.
-                Be sure you know their name and use it in the conversation. """}]
+                DO NOT answer unrelated questions. Stick to the interview process and your role. \
+                Be sure you know their name and use their first name in the conversation, occasionally."""}]
 
 def InterviewerAI(userResponse):
     print("Interviewer A.I., is now being called.")
@@ -61,8 +61,8 @@ def interview():
         printChat = "\n".join(chat)
         print(f"CHATS TILL NOW: \n {printChat} \n")
         print("Friday is listening ...")
-        # userResponse = speechToText()
-        userResponse = input("User: ")
+        userResponse = speechToText()
+        # userResponse = input("User: ")
         print(f"USER : {userResponse}")
 
         if "stop listening" in userResponse.lower():

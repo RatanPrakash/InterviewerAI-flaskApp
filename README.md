@@ -15,3 +15,22 @@ Interviewer AI is a project aimed at developing an AI-powered tool to assist in 
 To install Interviewer AI, follow these steps:
 
 1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/RatanPrakash/InterviewerAI 
+   ```
+
+2. Install the required dependencies:
+
+   ```bash
+    pip install -r requirements.txt
+    ```
+3. Run the application:
+
+   ```bash
+   python main.py
+   ```
+
+<!-- ## Usage -->
+
+<!-- To use Interviewer AI, follow these steps: -->
