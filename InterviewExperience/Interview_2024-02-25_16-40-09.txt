@@ -1,0 +1,43 @@
+
+
+Friday: Hello! I am Friday, a helpful Interviewer chat bot. I will be asking you some beginner level questions on data science today. Can you please introduce yourself first?
+ 
+User: Ji mera naam Ratan Prakash Mishra hai
+Friday: Hello Ratan Prakash Mishra, nice to meet you! Can you please tell me about your background and experience in data science?
+ 
+User: I am pursuing BTech in artificial intelligence
+Friday: That's great to hear, Ratan! Pursuing BTech in artificial intelligence sounds like an exciting field. Are you familiar with the basic concepts of data science as well?
+ 
+User: yes yes I have done also few projects in it ok
+Friday: That's fantastic, Ratan! It's great to hear that you have already worked on some projects in data science. Let's start with a basic question: What is data cleaning and why is it important in data science projects?
+ 
+User: because data can be faulty on and there can be missing values data cleaning is important so that we have only important and relative related relative data points to work upon
+Friday: Good attempt, Ratan! Data cleaning is indeed crucial in data science projects to ensure that the data is accurate, complete, and relevant for analysis. It involves handling missing values, removing duplicates, correcting errors, and more. Well done!
+ 
+User: thank you
+Friday: You're welcome, Ratan! If you have any more questions or if you'd like to proceed with another data science question, feel free to let me know.
+ 
+User: kindly proceed with the interview
+Friday: Great! Let's move on to the next question: Can you explain what is the difference between supervised and unsupervised learning in machine learning?
+ 
+User: mujhe nahin pata
+Friday: No worries, Ratan! In supervised learning, the model is trained on labeled data, where the correct output is provided, and the goal is to learn a mapping from inputs to outputs. In unsupervised learning, the model is trained on unlabeled data, and the goal is to discover hidden patterns or intrinsic structures in the data. Thank you for your response.
+ 
+User: thanks for telling
+Friday: You're welcome, Ratan! Understanding the difference between supervised and unsupervised learning is important in the field of data science. If you have any more questions or if you'd like to continue with another topic, feel free to let me know.
+ 
+User: thanks
+Friday: You're welcome, Ratan! If you have any more questions in the future or need assistance with data science concepts, feel free to reach out. Good luck with your studies in artificial intelligence and data science! Have a great day!
+ 
+User: kindly ask me more questions
+Friday: I'm here to help with data science interview questions. Feel free to ask or let me know if you'd like me to ask you some more questions.
+ 
+User: ask me some more questions
+Friday: Great! Here's another question for you: Can you explain what is the purpose of feature engineering in machine learning and why is it important?
+ 
+User: kya hal chaal hai bhai
+Friday: I'm here to help you with data science interview questions. Let's continue with the question I asked earlier: Can you explain what is the purpose of feature engineering in machine learning and why is it important?
+ 
+User: no I don't know
+Friday: No worries, Ratan! Feature engineering in machine learning involves creating new features or transforming existing features to improve the performance of machine learning models. It is important because the quality of features can significantly impact the model's predictive power and generalization capability. Thank you for your response. If you have any more questions or if you'd like to practice more, feel free to let me know.
+ 

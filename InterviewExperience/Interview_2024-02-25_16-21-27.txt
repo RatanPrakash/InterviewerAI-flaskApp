@@ -1,0 +1,32 @@
+
+
+
+
+Friday: Hello! Thank you for coming in for the interview today. I am Friday, your Interviewer chat bot. Could you please introduce yourself?
+User: yes my name is Ratan Prakash Mishra I am a student at Delhi Technological University pursuing BTech in electronics and communication engineering
+Friday: Nice to meet you, Ratan Prakash Mishra! Let's start with a few non-technical questions. 
+Can you tell me about a project you worked on that you are particularly proud of?
+User: yes I have made a project that is using open CV and media pipe to build a gesture controlled Drone I can control my Drone using showing gestures on the webcam of my laptop
+Friday: That's really impressive, Ratan Prakash Mishra! Using OpenCV and MediaPipe to control a drone with gestures shows your creativity and technical skills. 
+Now, can you tell me about a time when you had to work in a team to accomplish a goal? How did you contribute to the team's success?
+User: I couldn't understand can you repeat the question
+Friday: Of course! Can you tell me about a time when you had to work in a team to accomplish a goal? How did you contribute to the team's success?
+User: yes I was part of a team which is participating in formula student competitions worldwide so I had to work in a team environment and I had to mentor a lot of juniors for the dream success
+Friday: That's great to hear, Ratan Prakash Mishra! Mentoring juniors and working as a team player in the Formula Student competitions showcase your leadership and teamwork skills.
+Moving on to a technical question now, can you explain what Data Science is and why it is important in today's world?
+User: data science is a growing field data science is a growing field that is emerging with new technologies nowadays with the Boom of artificial intelligence it is a very important field to be have knowledge in
+Friday: Good explanation, Ratan Prakash Mishra! Data Science is indeed a growing field that deals with extracting insights from data using various techniques. It is important in today's world due to the increasing reliance on data-driven decision making across industries.
+Now, can you differentiate between supervised and unsupervised learning in the context of machine learning?
+User: yes unsupervised machine learning is a process in which we deal with and labelled data and used to train the model to find patterns in it and supervised model is where we provide labelled data to the machine learning algorithm and it tries to learn with those labelled data for example image cats and dogs labelled a supervised learning process while trying to differentiate between apples and oranges without labelled data is unsupervised learning
+Friday: Good attempt, Ratan Prakash Mishra! 
+Just to clarify, in supervised learning, the model is trained on labeled data with input-output pairs, while in unsupervised learning, the model deals with unlabeled data to find patterns or structures. Keep up the good work!
+Next, can you explain what overfitting is in the context of machine learning and how it can be prevented?
+User: overfitting is something when our machine learning data model is Biased on the data that we have trained upon it is not generalizing the trend properly and we can reduce it by using regularisation methods
+Friday: That's correct, Ratan Prakash Mishra! Overfitting occurs when the model learns the noise in the training data rather than the underlying pattern, leading to poor generalization on new data. Regularization techniques can help prevent overfitting by adding a penalty term to the model's loss function.
+You have a good understanding of important concepts in data science. Keep up the good work, Ratan Prakash Mishra!
+User: thank you so much
+Friday: You're welcome, Ratan Prakash Mishra! If you have any more questions or need further clarification, feel free to ask. Good luck with your future endeavors in data science!
+User: am I done with the interview
+Friday: Yes, Ratan Prakash Mishra, you have successfully completed the interview. Thank you for your time and thoughtful responses. If you have any more questions or need feedback, feel free to ask. Good luck!
+User: can you tell me how to use Instagram
+Friday: I apologize, I can only assist you with questions related to data science and the interview process. If you have any more questions on those topics, feel free to ask. Thank you!

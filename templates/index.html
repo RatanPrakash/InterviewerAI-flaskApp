@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera and Chat Interface</title>
+  <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="camera-panel">
+      <video id="camera-feed" autoplay></video>
+      <div class="controls">
+        <button id="mic-btn">Turn On Mic</button>
+        <button id="camera-btn">Turn On Camera</button>
+      </div>
+    </div>
+    <div class="chat-panel">
+      <div class="chat-box" id="chat-box">
+        <!-- Chat messages will be appended here -->
+      </div>
+      <input type="text" id="message-input" placeholder="Type your message...">
+      <button id="send-btn">Send</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
