@@ -1,25 +1,24 @@
 import datetime
 import speech_recognition as sr
 import os
-import pyttsx3
-from gtts import gTTS
 
 # def say(text):
 #     os.system(f"""say "{text}" """)
 
-def say(text):
-    # Initialize the text-to-speech engine
-    engine = pyttsx3.init(driverName='nsss')  # Use 'sapi5' on Windows
-    # engine.setProperty('voice', 'com.apple.voice.compact.it-IT.Alice') 
-    engine.setProperty('rate', 200)  # Adjust the speech rate (words per minute)
-    engine.say(text)
-    engine.runAndWait()
-
 # def say(text):
-#     tts = gTTS(text=text, lang='en', slow=False)
-#     tts.save("FridayReplies/output.mp3")
-#     os.system("mpg123 FridayReplies/output.mp3")
-#     # os.remove("output.mp3")
+#     import pyttsx3
+#     engine = pyttsx3.init(driverName='nsss') 
+#     # engine.setProperty('voice', 'com.apple.voice.compact.it-IT.Alice') 
+#     engine.setProperty('rate', 200)  # Adjust the speech rate (words per minute)
+#     engine.say(text)
+#     engine.runAndWait()
+
+def say(text):
+    from gtts import gTTS
+    tts = gTTS(text=text, lang='en', slow=False, tld='co.in')
+    tts.save("FridayReplies/output.mp3")
+    os.system("mpg123 FridayReplies/output.mp3")
+    # os.remove("output.mp3")
 
 def speechToText():
     r = sr.Recognizer()

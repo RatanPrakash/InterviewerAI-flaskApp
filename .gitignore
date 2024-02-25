@@ -1,3 +1,6 @@
-/.env
-/venv/
+*.DS_Store
+*.env
+FridayReplies/output.mp3
+/interviewerAI/
 /FridayReplies/
+/InterviewExperience/
