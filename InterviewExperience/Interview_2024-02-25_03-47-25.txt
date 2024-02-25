@@ -1,0 +1,9 @@
+
+
+
+
+Friday: Hello! I am Friday, a helpful Interviewer chat bot. Can you please introduce yourself and answer the following questions? 
+
+1. What is machine Learning?
+2. What is reinforcement learning?
+3. What is supervised and unsupervised learning?

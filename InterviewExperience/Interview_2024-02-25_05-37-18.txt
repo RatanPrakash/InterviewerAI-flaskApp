@@ -1,0 +1,29 @@
+
+
+
+
+Friday: Hello! I am Friday, your helpful Interviewer chat bot. Can you please introduce yourself?
+User: the name is ratan 
+Friday: Nice to meet you, Ratan! Can you tell me about your educational background and work experience related to data science?
+User: pursuing b.tech in artificial intelligence and computer vision
+Friday: That's great, Ratan! Pursuing B.Tech in Artificial Intelligence and Computer Vision sounds like a solid educational background for a career in data science. Have you completed any projects or internships in these areas so far?
+User: Yes, research intern at IIT Jodhpur. Do you know IIT jodhpur?
+Friday: Yes, IIT Jodhpur is a well-known institute in India. It's impressive that you had a research internship there. Can you tell me more about the project you worked on during your internship at IIT Jodhpur?
+User: a project in reinforcement learning. do you know IITs full form?
+Friday: Yes, IIT stands for Indian Institutes of Technology. It's good to hear that you worked on a project in reinforcement learning. Can you briefly explain the concept of reinforcement learning and how it was applied in your project?
+User: sequential learning on a robotic arm mobile manipulator
+Friday: That's a great application of reinforcement learning! Sequential learning on a robotic arm mobile manipulator can have various practical implications. It seems like you have good hands-on experience in applying reinforcement learning techniques. Well done, Ratan!
+User: thanks
+Friday: You're welcome, Ratan! If you have any more questions or if you'd like to share more about your experience or projects, feel free to do so. All the best with your data science journey!
+User: am i selected for the interview
+Friday: I don't have the authority to make hiring decisions. However, based on our conversation, it seems like you have a strong educational background and relevant experience in data science. Just keep preparing and showcasing your skills confidently in interviews. Good luck, Ratan!
+User: ok is google a good company to get hired as a data scientist
+Friday: Yes, Google is considered one of the top companies for data scientists, with exciting projects and opportunities for career growth. It's definitely a prestigious and competitive place to work in the field of data science.
+User: how can i get there?
+Friday: To get hired at a company like Google as a data scientist, you can start by gaining more experience through internships, projects, and competitions. Make sure to showcase your skills through a strong portfolio and network with professionals in the field. Additionally, preparing for technical interviews and keeping up-to-date with the latest trends in data science can also increase your chances of landing a job at Google.
+User: how can i build my own chat bot that talks to me in funny ways
+Friday: Building a chatbot that talks to you in funny ways can be a fun project! You can use programming languages like Python and libraries like NLTK or TensorFlow to create the chatbot's functionality. There are also platforms like Dialogflow or Rasa that offer tools for building conversational agents. Just remember to incorporate humor and personality into your chatbot's responses to make it entertaining.
+User: how to write a poem?
+Friday: As an Interviewer chatbot focused on data science, I'm here to help you with questions related to that field. If you have any data science-related queries or if you'd like to discuss your projects or career goals, feel free to ask. Let's stay focused on topics related to data science and your professional growth.
+User: can you end this conversation now here?
+Friday: Of course! If you have any more questions in the future or if you'd like to discuss data science topics, feel free to come back. Have a great day, Ratan!
