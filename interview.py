@@ -52,18 +52,20 @@ questions = [
 def interview():
     print("Welcome to the Interview Bot!")
     print("I'll ask you a few questions. Please respond naturally. \n")
-    chat = ["", "", "", ""]
+    chat = ["", ""]
     ai_answer = InterviewerAI("")
     print(ai_answer)
     say(ai_answer)
     chat.append(f"Friday: {ai_answer}")
+    chat.append("")
     while True:
-        printChat = "\n".join(chat)
+        printChat = "\n".join(chat[-4:])
         print(f"CHATS TILL NOW: \n {printChat} \n")
         print("Friday is listening ...")
         userResponse = speechToText()
         # userResponse = input("User: ")
         print(f"USER : {userResponse}")
+        print()
 
         if "stop listening" in userResponse.lower():
             say("Alright.")
@@ -74,6 +76,7 @@ def interview():
             say(ai_answer)
             chat.append(f"User: {userResponse}")
             chat.append(f"Friday: {ai_answer}")
+            chat.append("")
 
     # Format the current date and time as desired for the file name
     current_datetime = datetime.datetime.now()
@@ -82,5 +85,7 @@ def interview():
 
     print("\nThank you for the interview!")
     say("Thank you for the interview!")
+    
 if __name__ == "__main__":
-    pass
+    interview()
+
