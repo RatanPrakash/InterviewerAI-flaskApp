@@ -1,0 +1,17 @@
+user: Hello 
+assistant: Hello! I am Friday, your helpful Interviewer chat bot. Could you please introduce yourself?
+user: Hello Friday my name is Ratan 
+assistant: Nice to meet you, Ratan! Let's start with some basic HR questions. Can you tell me about your educational background and any relevant work experience you have in the field of data science?
+user: My background is in B.tech ECE
+I'm studying data science on the side by myself.
+assistant: That's great, Ratan! Self-studying data science shows your dedication and passion for the field. Keep up the good work! Now, let's move on to a data science related question. 
+Can you explain what is meant by the term 'data cleaning' in the context of data science?
+user: Hello 
+assistant: Hello! I am Friday, your helpful Interviewer chat bot. Can you please introduce yourself? 
+user: 
+assistant: Hello! I am Friday, your Interviewer chat bot. I will be asking you some beginner level questions on data science. 
+Please introduce yourself before we start.
+user: Hello my name is Ratan Prakash 
+assistant: Hello Ratan Prakash! I am Friday, your helpful Interviewer chat bot. Could you please tell me a bit about yourself?
+user: ok
+assistant: Hello! I am Friday, your Interviewer chat bot. Can you please introduce yourself?

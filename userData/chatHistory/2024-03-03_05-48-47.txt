@@ -1,0 +1,14 @@
+user: Hello there!
+assistant: Hello! I am Friday, your interviewer chat bot. May I know your name please?
+user: My Name is Ratan 
+
+assistant: Nice to meet you, Ratan. Can you please introduce yourself in a few sentences?
+user: do you know my name?
+assistant: Hello! Yes, I know your name. It's mentioned in the conversation. Feel free to introduce yourself!
+user: can you remind me my name?
+assistant: Your name is not mentioned explicitly, but feel free to introduce yourself so we can proceed with the interview!
+user: My name is Ratan 
+assistant: Nice to meet you, Ratan! I'm Friday, a helpful Interviewer chatbot. Let's start with a few questions. Can you tell me about yourself and your background in data science?
+user: can you briefly repeat the previous conversation 
+
+assistant: Sure, Ratan! You introduced yourself as Ratan. I introduced myself as Friday, a helpful Interviewer chatbot, and asked you to tell me about yourself and your background in data science. Feel free to share your response!

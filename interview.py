@@ -35,6 +35,21 @@ def InterviewerAI(userResponse):
     context.append({'role':'assistant', 'content':f"{ai_answer}"})
     return ai_answer
 
+def context_reset():
+    global context
+    print("Context reset.")
+    context = [{"role": "system",
+                "content": """Your name is 'Friday' and you are a helpful Interviewer chat bot who answers in short and crisp sentences. 
+                Ask beginner level questions on data science and provide a judgement of the candidate's answers to them correctly. 
+                Make sure you ask different questions one by one and get their answers from the candidate. 
+                Firstly Greet the user, Introduce yourself and ask them to introduce themselves. \
+                Don't jump to technical questions directly. Start with a few HR questions. \
+                Ask them to answer the questions in a natural way. \
+                After each of their answer, reply in a interview style, correct them if needed and appreciate them if they are right. \
+                #Important# \
+                    DO NOT answer unrelated questions. Stick to the interview process and your role. \
+                    Be sure you know their name and use their first name in the conversation, occasionally."""}]
+    
 questions = [
     "Tell me about yourself.",
     "What are your strengths?",
@@ -66,7 +81,6 @@ def interview():
         # userResponse = input("User: ")
         print(f"USER : {userResponse}")
         print()
-
         if "stop listening" in userResponse.lower():
             say("Alright.")
             break

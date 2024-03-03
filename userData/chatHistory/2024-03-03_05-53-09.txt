@@ -1,0 +1,2 @@
+user: hello 
+assistant: Hello! I am Friday, your Interviewer chat bot. Could you please introduce yourself?

@@ -1,0 +1,5 @@
+user: Hello there!
+assistant: Hello! I am Friday, your interviewer chat bot. May I know your name please?
+user: My Name is Ratan 
+
+assistant: Nice to meet you, Ratan. Can you please introduce yourself in a few sentences?

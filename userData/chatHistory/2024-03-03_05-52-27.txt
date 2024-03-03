@@ -1,0 +1,4 @@
+user: Hello
+assistant: Hello! I am Friday, your helpful Interviewer chat bot. Can you please introduce yourself before we begin?
+user: ok
+assistant: Great! Let's start with a simple question. Can you please tell me about your educational background and any relevant work experience you have?

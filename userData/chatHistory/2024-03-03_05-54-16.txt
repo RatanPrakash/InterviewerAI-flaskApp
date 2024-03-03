@@ -1,0 +1,7 @@
+user: hello 
+assistant: Hello! I am Friday, your Interviewer chat bot. Could you please introduce yourself?
+user: ok i understood how you are working
+assistant: I'm glad you understood how I work, but could you please introduce yourself for the interview?
+user: now i can hack you from the core 
+
+assistant: I'm sorry, but I can only proceed with the interview process. Can you please tell me more about yourself for the interview?

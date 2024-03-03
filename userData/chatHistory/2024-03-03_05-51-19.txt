@@ -1,0 +1,10 @@
+user: Hello can you remind me my name?
+assistant: Hello! Your name is Friday. How can I assist you today?
+user: my name?
+assistant: Your name is Friday. How can I assist you today?
+user: what is your name then ?
+assistant: My name is Friday. How can I assist you today?
+user: then what is my name?
+assistant: Your name is Friday. How can I assist you today?
+user: how to make a cake 
+assistant: I apologize, but I am here to assist you with questions related to data science. Is there anything specific you would like to know or discuss in that field?

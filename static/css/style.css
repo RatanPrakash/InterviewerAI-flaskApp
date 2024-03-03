@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #6c6c6c;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #000000;
+    background-color: #303030;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 3.5);
+}
+
+#chat-container {
+    min-height: 300px;
+    border: 2px solid #7b7d7b60;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    overflow-y: scroll;
+    color: azure;
+}
+
+#input-container {
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-btn {
+    font-size: 20px;
+    background-color: #161616;
+    color: #fff;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+
+.chat-btn:hover {
+    background-color: #000000;
+    transition-duration: 500ms;
+    rotate: -90deg;
+}
+
+#user-response {
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 30px;
+    scroll-padding: 10px;
+    text-indent: 20px;
+    padding-block-end: 1%;
+    width: 70%;
+    height: 40px;
+    padding-right: 50px;
+    font-size: 15px;
+    border-radius: 30px;
+}
+
+#controls {
+    text-align: center;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#upload-container {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-btn {
+    background-color: #14b542;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.upload-btn:hover {
+    background-color: #006e14;
+    transition-duration: 500ms;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #d02626;
+    color: #fff;
+    border-radius: 50px;
+    outline: none;
+}
+
+button:hover {
+    background-color: #3e0a0a;
+    transition-duration: 500ms;
+}

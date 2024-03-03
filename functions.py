@@ -14,11 +14,27 @@ import os
 #     engine.runAndWait()
 
 def say(text):
-    from gtts import gTTS
-    tts = gTTS(text=text, lang='en', slow=False, tld='co.in')
-    tts.save("FridayReplies/output.mp3")
-    os.system("mpg123 FridayReplies/output.mp3")
-    # os.remove("output.mp3")
+    print("OpenAI tts is being called.")
+    from pathlib import Path
+    from openai import OpenAI
+    from IPython.display import Audio
+    client = OpenAI()
+    speech_file_path = "speech.mp3"
+    response = client.audio.speech.create(
+    model="tts-1",
+    voice="alloy",
+    input=text
+    )
+    response.stream_to_file(speech_file_path)
+    # Audio(speech_file_path, autoplay=True, rate=22050)
+    os.system("mpg123 speech.mp3")
+
+# def say(text):
+#     from gtts import gTTS
+#     tts = gTTS(text=text, lang='en', slow=False, tld='co.in')
+#     tts.save("FridayReplies/output.mp3")
+#     os.system("mpg123 FridayReplies/output.mp3")
+#     # os.remove("output.mp3")
 
 def speechToText():
     r = sr.Recognizer()
@@ -57,7 +73,7 @@ def site_opener(query):
 #TODO: add app opening functionalities.
 def file_opener(query):
     if "play music" in query.lower():
-        musicPath = r"/Users/ratanprakash/Music/Music/Media.localized/Music/Unknown Artist/Unknown Album/IIT Techfest 2020  - SHKHR.mp3"
+        musicPath = r"/Users/ratanprakash/Music/Music/Media.localized/Music/Unknown Artist/Unknown Album"
         os.system(f"open '{musicPath}'")
         say("Playing Music.")
 

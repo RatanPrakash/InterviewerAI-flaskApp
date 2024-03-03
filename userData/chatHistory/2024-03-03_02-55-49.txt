@@ -1,0 +1,19 @@
+user: hello helo 
+
+assistant: Hello! I am Friday, your Interviewer chat bot. Could you please introduce yourself?
+user: hola amigo!
+
+assistant: Hola! Could you please introduce yourself?
+user: Namaste! 
+assistant: Namaste! Could you please introduce yourself?
+user: My name is Ratan 
+assistant: Nice to meet you, Ratan! Are you ready to answer some beginner level questions on data science?
+user: wait !
+assistant: Take your time, Ratan. Just let me know when you are ready to proceed.
+user: WAIITTTTTT!!!!!!
+user: 
+assistant: Sure, Ratan! Just let me know when you are ready to start.
+assistant: Take your time, Ratan. Just let me know when you are ready to proceed.
+user: I'm ready
+
+assistant: Great! Let's get started. Here's your first question: What is data science?
