@@ -21,12 +21,22 @@ $(document).ready(function() {
                 localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
                 // Display chat history including new messages
                 displayChatHistory(chatHistory);
+
+                // Check if the response contains an audio URL
+            if (response.audio_url) {
+                // Create an audio element
+                var audio = new Audio(response.audio_url);
+                // Autoplay the audio
+                audio.play();
+            }
             },
             error: function(xhr, status, error) {
                 alert('Error occurred while processing request.');
             }
         });
     });
+
+
     $('#clear-chat-history').click(function() {
         console.log("clearing chat history");
         $.ajax({
@@ -52,11 +62,14 @@ $(document).ready(function() {
     });
 });
 
+
+
 function displayChatHistory(history) {
     $('#chat-container').empty();
     history.forEach(function(message) {
         $('#chat-container').append('<p>' + message.role + ': ' + message.content + '</p>');
     });
+    // startAudio();
 }
 function checkFileSelected() {
     var fileInput = document.getElementById('resume');
@@ -66,3 +79,5 @@ function checkFileSelected() {
     }
     return true; // Allow form submission
 }
+
+

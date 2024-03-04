@@ -3,24 +3,147 @@ body {
     background-color: #6c6c6c;
 }
 
+/* Keep Transcript heading and button fixed */
+.transcript-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .container {
-    max-width: 800px;
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    max-width: 90%;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #000000;
     background-color: #303030;
     border-radius: 20px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 3.5);
+    align-items: center;
+}
+
+.top-container {
+    display: flex;
+    width: 100%; /* Occupy full width */
+    justify-content: space-between; /* Distribute items evenly */
+}
+
+.left-container,
+.webcam-container {
+    width: 48%; /* Both containers share the same width */
+    padding: 20px;
+    border: 2px solid #7b7d7b60;
+    border-radius: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-y: auto;
+}
+
+.webcam-container {
+    margin-left: 20px;
+    width: 60%; /* Adjust width based on content */
+}
+
+.right-container {
+    width: 90%; /* Occupy full width */
+    padding: 20px;
+    margin-top: 20px; /* Add margin-top to create space between left-container/webcam-container and right-container */
+    border: 2px solid #7b7d7b60;
+    border-radius: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-y: auto;
+}
+
+
+#video {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px; /* Rounded edges for the video */
+    border: 2px solid #7b7d7b60;
+}
+
+#startRecording,
+#hangup {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px; /* Rounded edges for the buttons */
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+#startRecording:hover,
+#hangup:hover {
+    background-color: #0056b3;
+}
+
+
+/* Style the Transcript button */
+#startButton {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style the Transcript content */
+.transcript-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    overflow-y: auto;
+    flex: 1; /* Added flex property */
+}
+
+/* Optional: Style for button and textarea */
+.chat-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#user-response {
+    width: calc(100% - 90px); /* Adjust width based on button size */
+    margin-right: 10px;
 }
 
 #chat-container {
-    min-height: 300px;
+    min-height: 450px;
     border: 2px solid #7b7d7b60;
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 20px;
     overflow-y: scroll;
     color: azure;
+    flex: 1;
+}
+
+#transcript {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #000000;
+    color: #ffffff;
+    text-indent: 20px;
+    padding-block-end: 1%;
+    width: 100%; /* Changed width to 100% */
+    height: 100%; /* Changed height to 100% */
+    padding-right: 50px;
+    font-size: 15px;
+    border-radius: 30px;
+    flex: 1;
 }
 
 #input-container {

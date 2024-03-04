@@ -22,6 +22,21 @@ def say(text):
     # Audio(speech_file_path, autoplay=True, rate=22050)
     os.system("mpg123 speech.mp3")
 
+def speech(text):
+    print("OpenAI tts is being called.")
+    from pathlib import Path
+    from openai import OpenAI
+    from IPython.display import Audio
+    client = OpenAI()
+    speech_file_path = "FridayReplies/speech.mp3"
+    response = client.audio.speech.create(
+    model="tts-1",
+    voice="alloy",
+    input=text
+    )
+    response.stream_to_file(speech_file_path)
+
+
 def speechToText():
     r = sr.Recognizer()
     with sr.Microphone() as source:

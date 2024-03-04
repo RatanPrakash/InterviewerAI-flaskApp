@@ -1,10 +1,14 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
-import os
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, send_file 
+from flask_socketio import SocketIO, emit
 from interview import InterviewerAI, context_reset
+from functions import speech
+import time
+import datetime
+import os
 
 app = Flask(__name__)
 app.secret_key = '###InterviewerSecretKey--193834792jgfjfjhgjjhgjhgtsd38749287498aksjdfhksjdhfkdjhdskjhfksdhf-------'
-
+socketio = SocketIO(app)
 
 
 @app.route('/')
@@ -33,12 +37,12 @@ def upload_file():
 def interview():
     user_response = request.json['user_response']
     ai_answer = InterviewerAI(user_response)
-    return jsonify({'ai_response': ai_answer})
+    speech(ai_answer)
+    return jsonify({'ai_response': ai_answer, 'audio_url': "FridayReplies/speech.mp3"})
 
 @app.route('/save_chat_history', methods=['POST'])
 def save_chat_history():
     print("chat history saving function called.")
-    import datetime
     current_datetime = datetime.datetime.now()
     filename = current_datetime.strftime('%Y-%m-%d_%H-%M-%S')
     chat_history = request.json.get('chat_history')
@@ -64,6 +68,36 @@ def process_text():
     user_response = text
     ai_answer = InterviewerAI(user_response)
     return jsonify({'output': ai_answer})
+
+@app.route('/save_video', methods=['POST'])
+def save_video():
+    current_datetime = datetime.datetime.now()
+    filename = current_datetime.strftime('%Y-%m-%d_%H-%M-%S')
+    try:
+        video_file = request.files['video']
+        video_file.save(f'userData/interviewRecordings/{filename}.webm')
+        return jsonify({'message': 'Video saved successfully'}), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/get_audio')
+def get_audio():
+    # Call your function that returns the audio file
+    audio_file_path = "FridayReplies/speech.mp3"
+    return send_file(audio_file_path, mimetype='audio/mpeg', as_attachment=True)
+
+@socketio.on('request_audio')
+def stream_audio():
+    audio_file_path = "FridayReplies/speech.mp3"  # Your function to get audio file path
+    with open(audio_file_path, 'rb') as audio_file:
+        while True:
+            chunk = audio_file.read()
+            if not chunk:
+                break
+            emit('audio_data', {'chunk': chunk})
+            time.sleep(0.1)  # Adjust sleep time as needed
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
