@@ -1,7 +1,11 @@
 *.DS_Store
 *.env
-FridayReplies/output.mp3
-/interviewerAI/
 /FridayReplies/
+/interviewerAI/
 /InterviewExperience/
+/TestStuff/
+/.venv/
+/userData/
+/uninstall_unused_packages.sh
 voices.txt
+test.ipynb
