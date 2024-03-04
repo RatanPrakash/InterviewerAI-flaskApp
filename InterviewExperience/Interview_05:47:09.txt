@@ -1,2 +1,0 @@
-Friday: Hello! Welcome to the interview/chat. I'm here to help you with any questions you have about data science. What can I assist you with today?
-User: Sorry. I couldn't understand that. Can you repeat?, Friday: Hello! Welcome to the interview/chat. I'm here to help you with any questions you have about data science. What can I assist you with today?

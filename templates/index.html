@@ -28,7 +28,51 @@
             </form>
             <p id="upload-message" style="display: none; color: green;"></p>
         </div>
-    </div>
+
+    <button id="startButton">transcript</button>
+    <div id="transcription"></div>
+    <div id="output"></div>
+    <script>
+        let recognition;
+        let transcriptionElement = document.getElementById('transcription');
+        let outputElement = document.getElementById('output');
+
+        const startButton = document.getElementById('startButton');
+        startButton.addEventListener('click', startVoiceCommunication);
+
+        function startVoiceCommunication() {
+            recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+            recognition.continuous = true;
+            recognition.interimResults = true;
+
+            recognition.onresult = function(event) {
+                let interimTranscript = '';
+                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        transcriptionElement.innerHTML += event.results[i][0].transcript + '<br>';
+                        // Send the final transcript to the backend for processing
+                        sendTextToBackend(event.results[i][0].transcript);
+                    } else {
+                        interimTranscript += event.results[i][0].transcript;
+                    }
+                }
+            };
+
+            recognition.start();
+        }
+
+        async function sendTextToBackend(text) {
+            const response = await fetch('/process_text', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: text })
+            });
+            const data = await response.json();
+            outputElement.innerHTML = data.output;
+        }
+    </script>
 
 </body>
 </html>

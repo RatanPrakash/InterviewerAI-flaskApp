@@ -1,4 +1,0 @@
-Friday: Hello! Welcome to the interview/chat. I'm here to help you with any questions you have about data science. How can I assist you today?
-User: ask me questions about data science, Friday: What is data science?
-User: data science is the field of machine learning and AI, Friday: Friday: What is data science?
-User: data science is the field of machine learning and AI, Friday: Friday: What is data science?
