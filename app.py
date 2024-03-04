@@ -56,17 +56,6 @@ def save_chat_history():
             return jsonify({'success': False}), 500
     else:
         return jsonify({'success': False}), 400
-    
-@app.route('/process_audio', methods=['POST'])
-def process_audio():
-    audio_file = request.files['audio']
-    # Process audio file using speech-to-text library
-    # Example: Convert audio to text
-    text = "This is a sample text output."
-    # Example: Process the text and generate a response
-    response = "Here is your processed response."
-
-    return jsonify({'response': response})
 
 @app.route('/process_text', methods=['POST'])
 def process_text():
@@ -75,9 +64,6 @@ def process_text():
     user_response = text
     ai_answer = InterviewerAI(user_response)
     return jsonify({'output': ai_answer})
-    # For demonstration, let's just convert it to uppercase
-    processed_text = text.upper()
-    return jsonify({'output': processed_text})
 
 if __name__ == '__main__':
     app.run(debug=True)

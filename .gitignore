@@ -1,6 +1,7 @@
 *.DS_Store
 *.env
 /FridayReplies/
+/__pycache__/
 /interviewerAI/
 /InterviewExperience/
 /TestStuff/

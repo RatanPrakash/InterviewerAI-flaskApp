@@ -30,11 +30,10 @@
         </div>
 
     <button id="startButton">transcript</button>
-    <div id="transcription"></div>
     <div id="output"></div>
     <script>
         let recognition;
-        let transcriptionElement = document.getElementById('transcription');
+        let transcriptionElement = document.getElementById('user-response');
         let outputElement = document.getElementById('output');
 
         const startButton = document.getElementById('startButton');
@@ -49,7 +48,7 @@
                 let interimTranscript = '';
                 for (let i = event.resultIndex; i < event.results.length; ++i) {
                     if (event.results[i].isFinal) {
-                        transcriptionElement.innerHTML += event.results[i][0].transcript + '<br>';
+                        transcriptionElement.innerHTML += event.results[i][0].transcript;
                         // Send the final transcript to the backend for processing
                         sendTextToBackend(event.results[i][0].transcript);
                     } else {
