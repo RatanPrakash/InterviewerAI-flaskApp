@@ -10,7 +10,6 @@ app = Flask(__name__)
 app.secret_key = '###InterviewerSecretKey--193834792jgfjfjhgjjhgjhgtsd38749287498aksjdfhksjdhfkdjhdskjhfksdhf-------'
 socketio = SocketIO(app)
 
-
 @app.route('/')
 def index():
     context_reset()
@@ -64,10 +63,10 @@ def save_chat_history():
 @app.route('/process_text', methods=['POST'])
 def process_text():
     text = request.json['text']
-    # Process the text here
     user_response = text
     ai_answer = InterviewerAI(user_response)
-    return jsonify({'output': ai_answer})
+    speech(ai_answer)
+    return jsonify({'output': ai_answer, 'audio_url': "FridayReplies/speech.mp3"})
 
 @app.route('/save_video', methods=['POST'])
 def save_video():
@@ -80,24 +79,10 @@ def save_video():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/get_audio')
-def get_audio():
-    # Call your function that returns the audio file
-    audio_file_path = "FridayReplies/speech.mp3"
-    return send_file(audio_file_path, mimetype='audio/mpeg', as_attachment=True)
-
-@socketio.on('request_audio')
-def stream_audio():
-    audio_file_path = "FridayReplies/speech.mp3"  # Your function to get audio file path
-    with open(audio_file_path, 'rb') as audio_file:
-        while True:
-            chunk = audio_file.read()
-            if not chunk:
-                break
-            emit('audio_data', {'chunk': chunk})
-            time.sleep(0.1)  # Adjust sleep time as needed
-
-
+@app.route('/audio')
+def serve_audio():
+    # Replace 'audio.mp3' with the path to your audio file
+    return send_file('FridayReplies/speech.mp3', as_attachment=True)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -49,30 +49,15 @@
             </div>
         </div>
     </div>    
-    <div id="output"></div>
-
-    
+    <div id="output"></div>  
     <script src="{{ url_for('static', filename='/scripts/webcam.js') }}"></script>
     <script src="{{ url_for('static', filename='/scripts/transcript.js') }}"></script>
 
 
-    <audio id="audio" controls autoplay></audio>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
-    <script>
-        const audio = document.getElementById('audio');
-        const socket = io.connect('http://' + document.domain + ':' + location.port);
+<audio id="audioPlayer" controls>
+  Your browser does not support the audio element.
+</audio>
 
-        socket.on('connect', function() {
-            socket.emit('request_audio');
-        });
 
-        socket.on('audio_data', function(data) {
-            const chunk = data['chunk'];
-            const byteArray = new Uint8Array(chunk);
-            const blob = new Blob([byteArray], { type: 'audio/mpeg' });
-            const blobURL = URL.createObjectURL(blob);
-            audio.src = blobURL;
-        });
-    </script>
 </body>
 </html>

@@ -3,6 +3,7 @@ let recognition;
 let transcriptionElement = document.getElementById('transcript');
 let outputElement = document.getElementById('output');
 let interimTranscriptElement = document.getElementById('interim-transcript');
+var audioElement = document.getElementById("audio");
 
 const startButton = document.getElementById('startButton');
 startButton.addEventListener('click', startVoiceCommunication);
@@ -21,11 +22,10 @@ function startVoiceCommunication() {
                 // Send the final transcript to the backend for processing
                 sendTextToBackend(event.results[i][0].transcript);
             } else {
-                interimTranscriptElement.innerHTML += event.results[i][0].transcript;
+                interimTranscriptElement.innerHTML = event.results[i][0].transcript;
             }
         }
     };
-
     recognition.start();
 }
 
@@ -39,4 +39,29 @@ async function sendTextToBackend(text) {
     });
     const data = await response.json();
     outputElement.innerHTML = data.output;
+    await fetchAudio();
 }
+
+function playAudio(audioBlob) {
+var audio = document.getElementById("audioPlayer");
+  var blob = new Blob([audioBlob], { type: 'audio/mpeg' });
+  var url = window.URL.createObjectURL(blob);
+  audio.src = url;
+  audio.play();
+}
+
+// Function to fetch audio data from the server
+function fetchAudio() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/audio', true);
+    xhr.responseType = 'arraybuffer';
+  
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var audioData = xhr.response;
+        playAudio(audioData);
+      }
+    };
+  
+    xhr.send();
+  }
