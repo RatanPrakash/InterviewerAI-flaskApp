@@ -1,4 +1,3 @@
-
 let recognition;
 let transcriptionElement = document.getElementById('transcript');
 let outputElement = document.getElementById('output');
@@ -7,20 +6,21 @@ var audioElement = document.getElementById("audio");
 
 const startButton = document.getElementById('startButton');
 startButton.addEventListener('click', startVoiceCommunication);
-
-function startVoiceCommunication() {
+async function startVoiceCommunication() {
     recognition = new webkitSpeechRecognition() || new SpeechRecognition();
     recognition.continuous = true;
     recognition.interimResults = true;
 
-    recognition.onresult = function(event) {
+    recognition.onresult = async function (event) {
         let interimTranscript = '';
         for (let i = event.resultIndex; i < event.results.length; ++i) {
             if (event.results[i].isFinal) {
                 interimTranscriptElement.innerHTML = '';
                 transcriptionElement.innerHTML += event.results[i][0].transcript + '<br>';
                 // Send the final transcript to the backend for processing
-                sendTextToBackend(event.results[i][0].transcript);
+                recognition.stop();
+                const resp = await sendTextToBackend(event.results[i][0].transcript);
+                // sendTextToBackend(event.results[i][0].transcript);
             } else {
                 interimTranscriptElement.innerHTML = event.results[i][0].transcript;
             }
@@ -49,21 +49,27 @@ function fetchAudio() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '/audio', true);
     xhr.responseType = 'arraybuffer';
-  
-    xhr.onload = function() {
-      if (xhr.status === 200) {
-        var audioData = xhr.response;
-        playAudio(audioData);
-      }
+
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            var audioData = xhr.response;
+            playAudio(audioData);
+        }
     };
-  
     xhr.send();
-  }
+}
 
 function playAudio(audioBlob) {
-var audio = document.getElementById("audioPlayer");
-  var blob = new Blob([audioBlob], { type: 'audio/mpeg' });
-  var url = window.URL.createObjectURL(blob);
-  audio.src = url;
-  audio.play();
+    var audio = document.getElementById("audioPlayer");
+    var blob = new Blob([audioBlob], { type: 'audio/mpeg' });
+    var url = window.URL.createObjectURL(blob);
+    audio.src = url;
+    audio.play();
+    console.log('Playing audio');
+
+    audio.onended = function() {
+        // This function will be called when the audio has finished playing
+        console.log('Audio playback finished');
+        recognition.start();
+    };
 }

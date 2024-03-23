@@ -21,7 +21,6 @@ $(document).ready(function() {
                 localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
                 // Display chat history including new messages
                 displayChatHistory(chatHistory);
-
                 // Check if the response contains an audio URL
             },
             error: function(xhr, status, error) {
@@ -65,6 +64,8 @@ function displayChatHistory(history) {
     });
     // startAudio();
 }
+
+
 function checkFileSelected() {
     var fileInput = document.getElementById('resume');
     if (fileInput.files.length === 0) {
