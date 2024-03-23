@@ -30,6 +30,8 @@ function startVoiceCommunication() {
 }
 
 async function sendTextToBackend(text) {
+    // simulate a button click to send the text to the backend for processing
+    // document.getElementById('#submit-response').click();
     const response = await fetch('/process_text', {
         method: 'POST',
         headers: {
@@ -40,14 +42,6 @@ async function sendTextToBackend(text) {
     const data = await response.json();
     outputElement.innerHTML = data.output;
     await fetchAudio();
-}
-
-function playAudio(audioBlob) {
-var audio = document.getElementById("audioPlayer");
-  var blob = new Blob([audioBlob], { type: 'audio/mpeg' });
-  var url = window.URL.createObjectURL(blob);
-  audio.src = url;
-  audio.play();
 }
 
 // Function to fetch audio data from the server
@@ -65,3 +59,11 @@ function fetchAudio() {
   
     xhr.send();
   }
+
+function playAudio(audioBlob) {
+var audio = document.getElementById("audioPlayer");
+  var blob = new Blob([audioBlob], { type: 'audio/mpeg' });
+  var url = window.URL.createObjectURL(blob);
+  audio.src = url;
+  audio.play();
+}

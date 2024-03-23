@@ -1,11 +1,12 @@
 import datetime
 import speech_recognition as sr
 import os
+import PyPDF2
 
 # def say(text):
 #     os.system(f"""say "{text}" """)
 
-
+#not being used for now.
 def say(text):
     print("OpenAI tts is being called.")
     from pathlib import Path
@@ -31,7 +32,7 @@ def speech(text):
     speech_file_path = "FridayReplies/speech.mp3"
     response = client.audio.speech.create(
     model="tts-1",
-    voice="alloy",
+    voice="echo", # permitted: 'nova', 'shimmer', 'echo', 'onyx', 'fable', 'alloy'
     input=text
     )
     response.stream_to_file(speech_file_path)
@@ -58,6 +59,20 @@ def write_text_to_file(text, file_path):
         print(f"Text written to '{file_path}' successfully.")
     except Exception as e:
         print(f"Error occurred: {e}")
+
+def read_text_from_file(file_path):
+    # Open the PDF file
+    pdf_file = open(file_path, 'rb')
+    # Read the PDF file
+    reader = PyPDF2.PdfReader(pdf_file)
+    # Print the number of pages
+    print(len(reader.pages))
+    # Get the first page
+    page = reader.pages[0]
+    # Extract the text from the first page
+    text = page.extract_text()
+    pdf_file.close()
+    return text
 
 
 

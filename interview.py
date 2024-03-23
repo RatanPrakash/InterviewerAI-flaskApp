@@ -1,8 +1,6 @@
 import os
 import openai
 from dotenv import load_dotenv
-from functions import say, speechToText, write_text_to_file
-import datetime
 
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
@@ -29,26 +27,29 @@ context = [{"role": "system",
 
 def InterviewerAI(userResponse):
     print("Interviewer A.I., is now being called.")
-
     context.append({'role':'user', 'content':f"{userResponse}"})
     ai_answer = get_completion_from_messages(context) 
     context.append({'role':'assistant', 'content':f"{ai_answer}"})
     return ai_answer
 
-def context_reset():
+def context_reset(resume=""):
     global context
     print("Context reset.")
+    if not resume:
+        resume = "There is no resume uploaded as of yet. Ask generic questions related to Computer Science to the candidate."
     context = [{"role": "system",
-                "content": """Your name is 'Friday' and you are a helpful Interviewer chat bot who answers in short and crisp sentences. 
-                Ask beginner level questions on data science and provide a judgement of the candidate's answers to them correctly. 
+                "content": f"""Your name is 'John' and you are a helpful Interviewer who answers in Interview style. 
+                Ask beginner level questions on Computer science and provide a judgement of the candidate's answers to them correctly.
+                Prefer Resume based questions. Here is the resume content of the candidate. {resume} \
                 Make sure you ask different questions one by one and get their answers from the candidate. 
                 Firstly Greet the user, Introduce yourself and ask them to introduce themselves. \
                 Don't jump to technical questions directly. Start with a few HR questions. \
-                Ask them to answer the questions in a natural way. \
-                After each of their answer, reply in a interview style, correct them if needed and appreciate them if they are right. \
+                If you find that the candidate's answer seems interrupted in between and is not complete, ask them to continue. \
+                After each of their answer, reply in a interview style, correct them if needed and appreciate them ONLY AND ONLY if they are right. \
                 #Important# \
                     DO NOT answer unrelated questions. Stick to the interview process and your role. \
-                    Be sure you know their name and use their first name in the conversation, occasionally."""}]
+                    Be sure you know their name and use their first name in the conversation, occasionally.
+                    """}]
     
 questions = [
     "Tell me about yourself.",
@@ -64,42 +65,7 @@ questions = [
     "What is computer Vision?"
     # Add more questions as needed
 ]
-def interview():
-    print("Welcome to the Interview Bot!")
-    print("I'll ask you a few questions. Please respond naturally. \n")
-    chat = ["", ""]
-    ai_answer = InterviewerAI("")
-    print(ai_answer)
-    say(ai_answer)
-    chat.append(f"Friday: {ai_answer}")
-    chat.append("")
-    while True:
-        printChat = "\n".join(chat[-4:])
-        print(f"CHATS TILL NOW: \n {printChat} \n")
-        print("Friday is listening ...")
-        userResponse = speechToText()
-        # userResponse = input("User: ")
-        print(f"USER : {userResponse}")
-        print()
-        if "stop listening" in userResponse.lower():
-            say("Alright.")
-            break
-        if userResponse:
-            ai_answer = InterviewerAI(userResponse)
-            print(ai_answer)
-            say(ai_answer)
-            chat.append(f"User: {userResponse}")
-            chat.append(f"Friday: {ai_answer}")
-            chat.append("")
 
-    # Format the current date and time as desired for the file name
-    current_datetime = datetime.datetime.now()
-    formatted_datetime = current_datetime.strftime('%Y-%m-%d_%H-%M-%S')
-    write_text_to_file("\n".join(chat), f"InterviewExperience/Interview_{formatted_datetime}.txt")
-
-    print("\nThank you for the interview!")
-    say("Thank you for the interview!")
     
 if __name__ == "__main__":
-    interview()
-
+    pass

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, send_file 
 from flask_socketio import SocketIO, emit
 from interview import InterviewerAI, context_reset
-from functions import speech
+from functions import speech, read_text_from_file
 import time
 import datetime
 import os
@@ -30,7 +30,9 @@ def upload_file():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             flash('File successfully uploaded')
             return redirect(url_for('index'))
-        
+    resume_text = read_text_from_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    context_reset(resume=resume_text)
+
 
 @app.route('/interview', methods=['POST'])
 def interview():

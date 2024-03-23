@@ -23,12 +23,6 @@ $(document).ready(function() {
                 displayChatHistory(chatHistory);
 
                 // Check if the response contains an audio URL
-            if (response.audio_url) {
-                // Create an audio element
-                var audio = new Audio(response.audio_url);
-                // Autoplay the audio
-                audio.play();
-            }
             },
             error: function(xhr, status, error) {
                 alert('Error occurred while processing request.');
