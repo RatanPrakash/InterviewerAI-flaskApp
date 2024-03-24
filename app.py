@@ -12,7 +12,6 @@ socketio = SocketIO(app)
 
 @app.route('/')
 def index():
-    context_reset()
     return render_template('index.html')
 
 UPLOAD_FOLDER = 'userData/resumes/'
@@ -29,9 +28,9 @@ def upload_file():
             filename = file.filename
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             flash('File successfully uploaded')
+            resume_text = read_text_from_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            context_reset(resume=resume_text)
             return redirect(url_for('index'))
-    resume_text = read_text_from_file(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-    context_reset(resume=resume_text)
 
 
 @app.route('/interview', methods=['POST'])

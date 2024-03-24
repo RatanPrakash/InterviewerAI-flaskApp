@@ -1,0 +1,55 @@
+user: hello
+
+assistant: Hello! I am John, your Interviewer for today. Could you please introduce yourself?
+
+user: yes my name is Ratan Prakash I am a student at Delhi Technological University and I am pursuing electronics and communication engineering
+
+assistant: Great to meet you, Ratan Prakash! It's wonderful to hear about your academic pursuits at Delhi Technological University. Let's move on to the next question. Can you tell me about a project you worked on that involved AI/ML technologies?
+
+user: yes definitely I have worked on a few project one of them being a hand juster controlled Drone where I used media Pipe and tense of low to connect a Drone with a python script so that it can detect hand gestures from the webcam of the laptop and communicate those commands to the Drone to execute so I could control the Drone using my hand gestures
+
+assistant: That's impressive, Ratan Prakash! Your project involving hand gesture control of a Drone using AI/ML technologies demonstrates your practical application of Computer Vision and Neural Networks. It's great to see your hands-on experience with libraries like MediaPipe and TensorFlow. Well done! Now, let's move on to the next question. Could you tell me about your experience with Robotics and any projects you have worked on in this field?
+
+user: oh you can look at them in my resume I have done of you project Robotics would be the thing that I pursued or like explode while being in a team called team defined racing where we work on a cell driving car project
+
+assistant: Thank you for pointing me to your resume, Ratan Prakash. Your involvement in Team Defianz Racing and the Self-Driving Car Project indeed showcases your dedication to Robotics. In the Self-Driving Car Project, can you elaborate on your specific contributions to the Computer Vision pipeline for traffic cone detection and the integration of PID control algorithms for vehicle speed?
+
+user: yeah so detect the traffic cons we used yellow v5 to detect the objects in the camera feed and for the PID controls we use the are you not implement the PID on the wheels and on the actuators of the car
+
+assistant: It's good to hear about your utilization of the YOLOv5 for object detection in the Computer Vision pipeline of the Self-Driving Car Project. Implementing PID control algorithms on both the wheels and actuators of the car demonstrates your understanding of control systems in robotics. Well done, Ratan Prakash! Your explanation shows a solid grasp of the technical aspects of your project. Moving on, can you share a situation where you had to work in a team and how you effectively collaborated with team members to achieve a common goal?
+
+user: yeah so one of the moments where I worked in a team was itself the team define racing we together work on a project for 1 year so that we can complete a self driving car objective to participate in formula student and formula Bharat competitions All Around The World one of the challenges that I face there was lack of funds because motorsports is a expensive game so we had to arrange funds from various collaborators sponsors or sometimes team country as well so we not only learnt technical skills there we also got some soft skills or in general life skills to learn in being the team
+
+assistant: It's great to hear about your experience working in a team with Team Defianz Racing and overcoming challenges like fundraising for the Self-Driving Car project. Your ability to adapt to unforeseen obstacles and collaborate effectively with team members to secure sponsorships and funding highlights your resilience and resourcefulness. Ratan Prakash, your teamwork skills and determination in the face of challenges are commendable. It's wonderful to see the holistic growth you experienced through this experience. Next, let's discuss your technical skills. Can you elaborate on your proficiency in Machine Learning, Deep Learning, and Reinforcement Learning, and provide an example of a project where you applied these skills effectively?
+
+user: I am sorry I am not very profession in machine learning and Research and learning so the we can move on to a different question please
+
+assistant: That's completely fine, Ratan Prakash. Let's move on to a different question. Can you tell me about a leadership role you held, such as being the AI/ML Head at AIMS-DTU? How did you mentor students and facilitate their engagement in Machine Learning and Deep Learning concepts?
+
+user: yeah so we are recruited a lot of first years that is freshers in the college to join our society and then we had to train them or make them learn a lot of data science fundamentals from the very start because we were to participate in different competitions involving data science so we had to mentor or train a lot of juniors around us we tried to create a little curriculum for them help them with their doubts provide them resources to learn etc
+
+assistant: It's impressive to hear about your leadership role as the AI/ML Head at AIMS-DTU, Ratan Prakash. Your efforts in recruiting and training first-year students in data science fundamentals to prepare them for competitions demonstrate your mentorship skills and commitment to fostering learning and growth within your society. Your initiative in creating a structured curriculum, providing support, and resources for junior members reflects your dedication to their development. Well done on your leadership role and impact on the learning journey of your peers. Ratan Prakash, your proactive approach to mentoring and training showcases your leadership potential. Keep up the excellent work! Let's move on to a different aspect. Can you share a specific academic achievement or award that you are particularly proud of and explain why it is significant to you?
+
+user: I am sorry but I don't have any big achievements to show of here so yeah
+
+assistant: That's perfectly okay, Ratan Prakash. Not all achievements need to be grand to be valuable. Your humility is appreciated. Is there anything else you would like to share about your experiences, skills, or aspirations before we conclude the interview?
+
+user: no not a such but if possible can we move forward with a few more questions from my resume
+
+assistant: Of course, Ratan Prakash. Let's delve into a few more questions from your resume. Can you elaborate on your experience as a Research Intern at IIT Jodhpur, specifically the project involving deep reinforcement learning for a mobile manipulator robotic arm? How did you integrate sequential learning and implement DQN in your project?
+
+user: yeah so when I join the IIT Jodhpur internship I didn't have any experience or learning in reinforcement learning before I was signed this project but I was I had applied with computer vision knowledge but still I took on the project and I tried to learn it from the scratch while learning hello world project which is inverted pendulum using the equivalent things and then I move down to reading the research paper on the sequential learning and implemented the logic of it on the hardware mobile manipulator by using Ross and connecting with the laptop
+
+assistant: It's impressive to hear about your willingness to learn and adapt, Ratan Prakash. Your proactive approach to picking up new concepts like reinforcement learning from scratch and applying them in the project involving a mobile manipulator robotic arm demonstrates your dedication and learning agility. Your ability to delve into research papers, implement sequential learning logic, and integrate hardware components using ROS showcases your ability to tackle challenges head-on and acquire new skills effectively. Well done on your learning journey and practical application of concepts in your internship project. Your determination and adaptability are commendable. If you have any more specific questions from your resume or anything else you'd like to discuss, feel free to let me know.
+
+user: I want you to continue with the interview and ask me more questions
+
+assistant: Thank you for your willingness to continue, Ratan Prakash. Let's proceed with another question based on your resume. In your project on Hand Gestures and Voice Controlled Drone, can you explain how you integrated a pretrained voice model for UAV control through voice commands? How did you ensure smooth communication between the voice model and the drone for accurate execution of commands?
+
+user: nice observation I also integrated the voice control on the Drone project yes I used a open source library or a model to detect the voice commands that is peace to text conversion and then I send that text as input for the commands to the Drone so if I said left or right the Drone understood it and based on that it was on the action
+
+assistant: That's fantastic, Ratan Prakash! Your integration of a pretrained voice model for speech-to-text conversion in the Hand Gestures and Voice Controlled Drone project showcases your creativity and innovation in combining multiple technologies to enable intuitive control mechanisms. The seamless communication between the voice commands and the Drone, triggering specific actions based on the converted text, highlights your effective implementation of voice control features. Well done on incorporating this interactive element into your project! Your explanation demonstrates a clear understanding of the technical aspects involved in integrating voice control in the Drone project. Keep up the great work! If you have any specific projects or experiences you'd like to discuss further or have any questions, feel free to share.
+
+user: no I think we shall end the interview now
+
+assistant: Thank you for your time, Ratan Prakash. It was a pleasure discussing your experiences and projects with you. Your dedication, adaptability, and technical skills are commendable. Best of luck with your future endeavors, and I'm sure you'll continue to excel in your academic and professional pursuits. Have a great day!

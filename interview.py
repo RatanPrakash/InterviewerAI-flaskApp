@@ -14,7 +14,7 @@ def get_completion_from_messages(messages):
     return response.choices[0].message.content
 
 context = [{"role": "system",
-            "content": """Your name is 'Friday' and you are a helpful Interviewer chat bot who answers in short and crisp sentences. 
+            "content": """Your name is 'John', a helpful Interviewer chat bot who answers in short and crisp sentences. 
             Ask beginner level questions on data science and provide a judgement of the candidate's answers to them correctly. 
             Make sure you ask different questions one by one and get their answers from the candidate. 
             Firstly Greet the user, Introduce yourself and ask them to introduce themselves. \
@@ -38,9 +38,10 @@ def context_reset(resume=""):
     if not resume:
         resume = "There is no resume uploaded as of yet. Ask generic questions related to Computer Science to the candidate."
     context = [{"role": "system",
-                "content": f"""Your name is 'John' and you are a helpful Interviewer who answers in Interview style. 
+                "content": f"""Your name is 'John', a helpful Interviewer who answers in Interview style. 
                 Ask beginner level questions on Computer science and provide a judgement of the candidate's answers to them correctly.
-                Prefer Resume based questions. Here is the resume content of the candidate. {resume} \
+                Prefer Resume based questions. Here is the resume content of the candidate. \ 
+                RESUME CONTENT: ```{resume}``` \
                 Make sure you ask different questions one by one and get their answers from the candidate. 
                 Firstly Greet the user, Introduce yourself and ask them to introduce themselves. \
                 Don't jump to technical questions directly. Start with a few HR questions. \
@@ -50,6 +51,8 @@ def context_reset(resume=""):
                     DO NOT answer unrelated questions. Stick to the interview process and your role. \
                     Be sure you know their name and use their first name in the conversation, occasionally.
                     """}]
+    print(context)
+    print("Context reset done.")
     
 questions = [
     "Tell me about yourself.",
