@@ -3,12 +3,6 @@ body {
     background-color: #6c6c6c;
 }
 
-/* Keep Transcript heading and button fixed */
-.transcript-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .container {
     display: flex;
     flex-direction: column; /* Arrange children vertically */
@@ -26,6 +20,20 @@ body {
     display: flex;
     width: 100%; /* Occupy full width */
     justify-content: space-between; /* Distribute items evenly */
+}
+
+#call-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px; /* Adjust as needed */
+}
+
+#call-buttons button {
+    margin: 0 10px; /* Adjust as needed */
+}
+.off {
+    text-decoration: line-through;
+    background-color: rgb(87, 87, 87);
 }
 
 .left-container,
@@ -63,32 +71,34 @@ body {
     border: 2px solid #7b7d7b60;
 }
 
-#startRecording,
+#startRecording{
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px; /* Rounded edges for the buttons */
+    background-color: #059300;
+    color: #ffffff;
+    cursor: pointer;
+}
+
 #hangup {
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
     border: none;
     border-radius: 10px; /* Rounded edges for the buttons */
-    background-color: #007bff;
+    background-color: #ff0008;
     color: #ffffff;
     cursor: pointer;
 }
 
-#startRecording:hover,
+#startRecording:hover{
+    background-color: #017001;
+}
+
 #hangup:hover {
-    background-color: #0056b3;
-}
-
-
-/* Style the Transcript button */
-#startButton {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #9a0101;
 }
 
 /* Style the Transcript content */
@@ -126,23 +136,6 @@ body {
     border-radius: 20px;
     overflow-y: scroll;
     color: azure;
-    flex: 1;
-}
-
-#transcript {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 20px;
-    background-color: #000000;
-    color: #ffffff;
-    text-indent: 20px;
-    padding-block-end: 1%;
-    width: 100%; /* Changed width to 100% */
-    height: 100%; /* Changed height to 100% */
-    padding-right: 50px;
-    font-size: 15px;
-    border-radius: 30px;
     flex: 1;
 }
 
@@ -212,8 +205,6 @@ body {
 .upload-btn:hover {
     background-color: #006e14;
     transition-duration: 500ms;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 button {
@@ -231,4 +222,14 @@ button {
 button:hover {
     background-color: #3e0a0a;
     transition-duration: 500ms;
+}
+
+
+#audioPlayer {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }

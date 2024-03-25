@@ -15,21 +15,20 @@
         <div class="top-container">
             <div class="webcam-container">
                 <video id="video" width="640" height="480" autoplay muted></video>
+                <div id="call-buttons">
                 <button id="startRecording">Start Interview</button>
+                <button id="toggle-mic" onclick="toggleMic()">Mic</button>
+                <button id="toggle-camera" onclick="toggleCamera()">Camera</button>
                 <button id="hangup">Stop Interview and Save</button>
+                </div>
                 <div id="interim-transcript"></div>
                 <div id="transcript" class="transcript-content"></div>
-                <button id="toggle-mic">Mic</button>
-                <button id="toggle-camera">Camera</button>
             </div>
             <div class="left-container">
                 <div id="chat-container"></div>
                 <div id="input-container">
                     <textarea id="user-response" placeholder="Reply to Friday..."></textarea>
                     <button id="submit-response" class="chat-btn">➜</button>
-                </div>
-                <div id="controls">
-                    <button id="clear-chat-history">End</button>
                 </div>
                 <div id="upload-container">
                     <form id="upload-form" action="{{ url_for('upload_file') }}" method="post"

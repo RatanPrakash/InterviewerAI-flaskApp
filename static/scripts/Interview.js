@@ -34,7 +34,7 @@ $(document).ready(function () {
         });
     });
 
-    $('#clear-chat-history').click(function () {
+    $('#hangup').click(function () {
         console.log("clearing chat history");
         $.ajax({
             url: '/save_chat_history',
