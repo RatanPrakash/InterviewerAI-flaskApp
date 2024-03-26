@@ -1,2 +1,0 @@
-user: 
-assistant: Hello! I am Friday, your helpful Interviewer chat bot. May I know your name please?
