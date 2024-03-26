@@ -84,5 +84,5 @@ def serve_audio():
     print("Audio file being served.")
     return send_file('FridayReplies/speech.mp3', as_attachment=True)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
