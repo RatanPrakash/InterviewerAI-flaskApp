@@ -34,11 +34,18 @@ def upload_file():
 
 
 @app.route('/interview', methods=['POST'])
-def interview():
+def interview(): # called when message is sent. called by submit-response button click in interview.js
     user_response = request.json['user_response']
     ai_answer = InterviewerAI(user_response)
     speech(ai_answer)
     return jsonify({'ai_response': ai_answer, 'audio_url': "FridayReplies/speech.mp3"})
+
+@app.route('/process_text', methods=['POST'])
+def process_text(): # called when voice chat is taking place. called by sendTextToBackend() function in interview.js
+    user_response = request.json['text']
+    ai_answer = InterviewerAI(user_response)
+    speech(ai_answer) 
+    return jsonify({'output': ai_answer, 'audio_url': "FridayReplies/speech.mp3"})
 
 @app.route('/save_chat_history', methods=['POST'])
 def save_chat_history():
@@ -61,14 +68,6 @@ def save_chat_history():
     else:
         return jsonify({'success': False}), 400
 
-@app.route('/process_text', methods=['POST'])
-def process_text():
-    text = request.json['text']
-    user_response = text
-    ai_answer = InterviewerAI(user_response)
-    speech(ai_answer)
-    return jsonify({'output': ai_answer, 'audio_url': "FridayReplies/speech.mp3"})
-
 @app.route('/save_video', methods=['POST'])
 def save_video():
     current_datetime = datetime.datetime.now()
@@ -82,7 +81,7 @@ def save_video():
 
 @app.route('/audio')
 def serve_audio():
-    # Replace 'audio.mp3' with the path to your audio file
+    print("Audio file being served.")
     return send_file('FridayReplies/speech.mp3', as_attachment=True)
 
 if __name__ == '__main__':

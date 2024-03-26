@@ -76,7 +76,7 @@ $(document).ready(function () {
                     transcriptionElement.innerHTML += event.results[i][0].transcript + '<br>';
                     // Send the final transcript to the backend for processing
                     recognition.stop();
-                    const resp = await sendTextToBackend(event.results[i][0].transcript);
+                    const resp = await sendTextToBackend(event.results[i][0].transcript); // this line will wait for the sendTextToBackend function to complete
                     // sendTextToBackend(event.results[i][0].transcript);
                 } else {
                     interimTranscriptElement.innerHTML = event.results[i][0].transcript;
@@ -87,8 +87,6 @@ $(document).ready(function () {
     }
 
     async function sendTextToBackend(text) {
-        // simulate a button click to send the text to the backend for processing
-        // document.getElementById('#submit-response').click();
         var chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
         chatHistory.push({ role: 'user', content: text });
         localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
