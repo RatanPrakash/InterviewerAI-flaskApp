@@ -1,10 +1,18 @@
 *.DS_Store
 *.env
-/FridayReplies/*
 /__pycache__/
 /TestStuff/
 /.venv/
+FirstfullyfledgedInterview.txt
+
+# 
+FridayReplies/*
 userData/chatHistory/*
 userData/interviewRecordings/*
 userData/resumes/*
-FirstfullyfledgedInterview.txt
+
+# these empty folders are necessary for the app to work
+!userData/chatHistory/
+!userData/interviewRecordings/
+!userData/resumes/
+!FridayReplies/
