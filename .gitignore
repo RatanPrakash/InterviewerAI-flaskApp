@@ -5,14 +5,15 @@
 /.venv/
 FirstfullyfledgedInterview.txt
 
-# 
+# contents of these folders are not necessary to be uploaded to the repo
 FridayReplies/*
 userData/chatHistory/*
 userData/interviewRecordings/*
 userData/resumes/*
 
 # these empty folders are necessary for the app to work
-!userData/chatHistory/
-!userData/interviewRecordings/
-!userData/resumes/
-!FridayReplies/
+!userData/chatHistory/.gitkeep
+!userData/interviewRecordings/.gitkeep
+!userData/resumes/.gitkeep
+!FridayReplies/.gitkeep
+
