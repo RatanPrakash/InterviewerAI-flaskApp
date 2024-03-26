@@ -45,6 +45,7 @@ body {
     background-color: #000000;
     color: #ffffff;
     overflow-y: auto;
+    max-height: 60%;
 }
 
 .webcam-container {
@@ -137,6 +138,7 @@ body {
     overflow-y: scroll;
     color: azure;
     flex: 1;
+    max-height: 50%;
 }
 
 #input-container {

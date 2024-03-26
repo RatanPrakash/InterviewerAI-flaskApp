@@ -34,46 +34,20 @@ $(document).ready(function () {
         });
     });
 
-    $('#hangup').click(function () {
-        console.log("clearing chat history");
-        $.ajax({
-            url: '/save_chat_history',
-            type: 'POST',
-            contentType: 'application/json',
-            data: JSON.stringify({ 'chat_history': chatHistory }),
-            success: function (response) {
-                if (response.success) {
-                    localStorage.removeItem('chatHistory'); // Clear chat history data from localStorage
-                    $('#chat-container').empty();  // Clear chat container on the page
-                    // Reload the page
-                    location.reload();
-                    alert('Chat history saved successfully.');
-                } else {
-                    alert('Error occurred while saving chat history.');
-                }
-            },
-            error: function (xhr, status, error) { // throws error when the above ajax request fails
-                alert('Error occurred while processing request.');
-            }
-        });
-    });
-
-
-
     const startButton = document.getElementById('startRecording');
     startButton.addEventListener('click', startVoiceCommunication);
-
+    
     async function startVoiceCommunication() {
         recognition = new webkitSpeechRecognition() || new SpeechRecognition();
         recognition.continuous = true;
         recognition.interimResults = true;
-
+        
         recognition.onresult = async function (event) {
             let interimTranscript = '';
             for (let i = event.resultIndex; i < event.results.length; ++i) {
                 if (event.results[i].isFinal) {
                     interimTranscriptElement.innerHTML = '';
-                    transcriptionElement.innerHTML += event.results[i][0].transcript + '<br>';
+                    transcriptionElement.innerHTML = event.results[i][0].transcript + '<br>';
                     // Send the final transcript to the backend for processing
                     recognition.stop();
                     const resp = await sendTextToBackend(event.results[i][0].transcript); // this line will wait for the sendTextToBackend function to complete
@@ -85,12 +59,11 @@ $(document).ready(function () {
         };
         recognition.start();
     }
-
+    
     async function sendTextToBackend(text) {
-        var chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || [];
+        var chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || []; // this is a global variable
         chatHistory.push({ role: 'user', content: text });
         localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
-
         const response = await fetch('/process_text', {
             method: 'POST',
             headers: {
@@ -106,13 +79,38 @@ $(document).ready(function () {
         displayChatHistory(chatHistory);
         await fetchAudio();
     }
+    
+        $('#hangup').click(function () {
+            console.log("clearing chat history");
+            var chatHistory = JSON.parse(localStorage.getItem('chatHistory')) || []; // this is a global variable
+            $.ajax({
+                url: '/save_chat_history',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ 'chat_history': chatHistory }),
+                success: function (response) {
+                    if (response.success) {
+                        localStorage.removeItem('chatHistory'); // Clear chat history data from localStorage
+                        $('#chat-container').empty();  // Clear chat container on the page
+                        // Reload the page
+                        location.reload();
+                        alert('Chat history saved successfully.');
+                    } else {
+                        alert('Error occurred while saving chat history.');
+                    }
+                },
+                error: function (xhr, status, error) { // throws error when the above ajax request fails
+                    alert('Error occurred while processing request.');
+                }
+            });
+        });
 
     // Function to fetch audio data from the server
     function fetchAudio() {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', '/audio', true);
         xhr.responseType = 'arraybuffer';
-
+        
         xhr.onload = function () {
             if (xhr.status === 200) {
                 var audioData = xhr.response;
@@ -121,7 +119,7 @@ $(document).ready(function () {
         };
         xhr.send();
     }
-
+    
     function playAudio(audioBlob) {
         var audio = document.getElementById("audioPlayer");
         var blob = new Blob([audioBlob], { type: 'audio/mpeg' });
@@ -129,7 +127,7 @@ $(document).ready(function () {
         audio.src = url;
         audio.play();
         console.log('Playing audio');
-
+        
         audio.onended = function () {
             // This function will be called when the audio has finished playing
             console.log('Audio playback finished');
