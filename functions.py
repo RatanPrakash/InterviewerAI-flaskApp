@@ -1,10 +1,14 @@
 import os
 import PyPDF2
 from openai import OpenAI
+from dotenv import load_dotenv
+
+load_dotenv() # Load the .env file with the API key for OpenAI GPT-3 API
+openai_api_key = os.getenv("OPENAI_API_KEY") # Get the API key from the environment variables
 
 def speech(text):
     print("OpenAI tts is generating voice output.")
-    client = OpenAI()
+    client = OpenAI(api_key=openai_api_key)
     speech_file_path = "FridayReplies/speech.mp3"
     response = client.audio.speech.create(
         model="tts-1",
